@@ -1,0 +1,562 @@
+/* ============================================
+   DEVCONF 2026 — Design tokens
+   Palette:  bg #0E1116 | surface #161B22 | text #E6EDF3
+             muted #8B96A5 | accent #5B8CFF (signal blue)
+             accent-2 #FFB454 (terminal amber, used for "Pro" highlight)
+   Type: "Space Grotesk" (display) + "Inter" (body) + "JetBrains Mono" (labels)
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0E1116;
+  --surface: #161B22;
+  --surface-2: #1D232C;
+  --text: #E6EDF3;
+  --muted: #8B96A5;
+  --accent: #5B8CFF;
+  --accent-2: #FFB454;
+  --border: #262D38;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.eyebrow {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.section-heading {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.section-sub {
+  color: var(--muted);
+  text-align: center;
+  max-width: 560px;
+  margin: 12px auto 0;
+}
+
+.btn {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #0E1116;
+  background-color: var(--accent-2);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 180, 84, 0.25);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 22px 80px;
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  justify-self: center;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.nav-list li a:hover {
+  color: var(--text);
+}
+
+.nav-cta {
+  justify-self: end;
+}
+
+/* ============================================
+   HERO / BANNER — "terminal window" signature element
+   ============================================ */
+.banner-section {
+  position: relative;
+  padding: 100px 24px 140px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(91, 140, 255, 0.18), transparent 60%),
+    var(--bg);
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(230, 237, 243, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(230, 237, 243, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  pointer-events: none;
+}
+
+.terminal {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal-bar span {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background-color: #FF5F56;
+}
+
+.dot-yellow {
+  background-color: #FFBD2E;
+}
+
+.dot-green {
+  background-color: #27C93F;
+}
+
+.terminal-path {
+  margin-left: 12px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.banner-text {
+  padding: 56px 60px 64px;
+  text-align: center;
+}
+
+.banner-text .eyebrow {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.banner-text h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 64px;
+  line-height: 1.08;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.banner-text h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.banner-text p {
+  color: var(--muted);
+  font-size: 17px;
+  max-width: 560px;
+  margin: 0 auto 34px;
+}
+
+/* ============================================
+   SPEAKERS
+   ============================================ */
+.speaker {
+  padding: 120px 80px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.speaker-card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.skill {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 6px;
+}
+
+.name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.post {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing {
+  padding: 40px 80px 140px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.price-grid {
+  display: flex;
+  gap: 24px;
+  margin-top: 56px;
+  align-items: stretch;
+}
+
+.price-card {
+  flex: 1;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.price-card.featured {
+  background-color: #1B2333;
+  border: 1px solid var(--accent);
+  transform: scale(1.04);
+  box-shadow: 0 30px 60px rgba(91, 140, 255, 0.15);
+}
+
+.plan-name {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+
+.price {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.price span {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.plan-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 26px;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.features li {
+  font-size: 14px;
+  padding: 9px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+}
+
+.features li:first-child {
+  border-top: none;
+}
+
+.price-card .btn {
+  width: 100%;
+}
+
+.price-card:not(.featured) .btn {
+  background-color: var(--surface-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+/* ============================================
+   AI CHALLENGE SECTION — "Hack the Future" (48hr hackathon teaser)
+   ============================================ */
+.hackathon {
+  padding: 40px 80px 140px;
+}
+
+.hack-panel {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hack-text {
+  padding: 60px;
+}
+
+.hack-text h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 14px 0 16px;
+}
+
+.hack-text p {
+  color: var(--muted);
+  margin-bottom: 30px;
+  max-width: 440px;
+}
+
+.hack-stats {
+  display: flex;
+  gap: 36px;
+}
+
+.hack-stat .num {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--accent-2);
+}
+
+.hack-stat .label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hack-visual {
+  background:
+    linear-gradient(160deg, #1B2333, #0E1116);
+  padding: 60px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid var(--border);
+}
+
+.hack-code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  width: 100%;
+}
+
+.hack-code .tok-key {
+  color: var(--accent);
+}
+
+.hack-code .tok-str {
+  color: var(--accent-2);
+}
+
+.hack-code .tok-com {
+  color: #4E5866;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  padding: 48px 80px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.social {
+  display: flex;
+  gap: 18px;
+}
+
+.social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.social a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.footer-bottom {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+
+  nav,
+  .speaker,
+  .pricing,
+  .hackathon,
+  footer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  nav {
+    grid-template-columns: 1fr auto;
+  }
+
+  .banner-text h1 {
+    font-size: 40px;
+  }
+
+  .speaker-card {
+    grid-template-columns: 1fr;
+  }
+
+  .price-grid {
+    flex-direction: column;
+  }
+
+  .price-card.featured {
+    transform: none;
+  }
+
+  .hack-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hack-visual {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}
