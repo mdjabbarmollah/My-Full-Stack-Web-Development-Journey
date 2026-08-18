@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loopwork — Pricing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ 1. NAVBAR (Flexbox) ============ -->
+  <header class="navbar">
+    <div class="brand">
+      <span class="brand-mark">&gt;_</span>
+      <span class="brand-name">Loopwork</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="eyebrow">// pricing</p>
+      <h1>Pick a plan. Start the timer.</h1>
+      <p class="intro-sub">Track deep work, ship more code. Cancel anytime — no terminal commands required.</p>
+    </section>
+
+    <!-- ============ 2 & 3. PRICING CARDS (Grid) + BADGE (Positioning) ============ -->
+    <section class="pricing" id="pricing">
+
+      <article class="card">
+        <h2 class="plan-name">Basic</h2>
+        <p class="plan-desc">For solo devs starting out</p>
+        <p class="price"><span class="currency">$</span>9<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>1 active project</li>
+          <li>Basic time tracking</li>
+          <li>7-day history</li>
+          <li>Email support</li>
+        </ul>
+        <button class="btn btn-outline">Start Basic</button>
+      </article>
+
+      <article class="card card-featured">
+        <span class="badge">Most Popular</span>
+        <h2 class="plan-name">Standard</h2>
+        <p class="plan-desc">For developers in the zone</p>
+        <p class="price"><span class="currency">$</span>24<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>Unlimited projects</li>
+          <li>Advanced analytics</li>
+          <li>90-day history</li>
+          <li>Priority support</li>
+          <li>Invite up to 3 teammates</li>
+        </ul>
+        <button class="btn btn-solid">Start Standard</button>
+      </article>
+
+      <article class="card">
+        <h2 class="plan-name">Premium</h2>
+        <p class="plan-desc">For teams shipping fast</p>
+        <p class="price"><span class="currency">$</span>49<span class="period">/mo</span></p>
+        <ul class="features">
+          <li>Everything in Standard</li>
+          <li>Unlimited team members</li>
+          <li>Custom integrations</li>
+          <li>Dedicated support</li>
+          <li>Unlimited history</li>
+        </ul>
+        <button class="btn btn-outline">Start Premium</button>
+      </article>
+
+    </section>
+
+    <!-- ============ 4. FEATURE COMPARISON TABLE ============ -->
+    <section class="comparison">
+      <h2 class="section-title">Compare plans</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Basic</th>
+            <th>Standard</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Active projects</td>
+            <td>1</td>
+            <td>Unlimited</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>History retention</td>
+            <td>7 days</td>
+            <td>90 days</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Team members</td>
+            <td>—</td>
+            <td>Up to 3</td>
+            <td>Unlimited</td>
+          </tr>
+          <tr>
+            <td>Advanced analytics</td>
+            <td>—</td>
+            <td>&#10003;</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Custom integrations</td>
+            <td>—</td>
+            <td>—</td>
+            <td>&#10003;</td>
+          </tr>
+          <tr>
+            <td>Support</td>
+            <td>Email</td>
+            <td>Priority</td>
+            <td>Dedicated</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- ============ 5. STICKY / FIXED CONTACT BAR ============ -->
+  <div class="contact-bar">
+    <span>Not sure which plan fits? We'll help you pick one.</span>
+    <button class="btn btn-solid">Contact Us</button>
+  </div>
+
+</body>
+</html>
