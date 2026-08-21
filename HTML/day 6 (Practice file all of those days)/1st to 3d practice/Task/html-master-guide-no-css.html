@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Master Guide — No CSS Version</title>
+<meta name="description" content="HTML এর সব ট্যাগ, কোনো CSS ছাড়া, শুধু ব্রাউজারের ডিফল্ট লুকে">
+<style></style>
+</head>
+<body>
+
+<nav>
+  <a href="#structure">Structure</a> |
+  <a href="#text">Text</a> |
+  <a href="#inline">Inline</a> |
+  <a href="#lists">Lists</a> |
+  <a href="#tables">Tables</a> |
+  <a href="#forms">Forms</a> |
+  <a href="#media">Media</a> |
+  <a href="#interactive">Interactive</a> |
+  <a href="#embed">Embedded</a>
+</nav>
+
+<hr>
+
+<header>
+  <h1>HTML Master Guide (No CSS)</h1>
+  <p>এই পেজে কোনো CSS নাই — শুধু ব্রাউজারের ডিফল্ট স্টাইলে প্রতিটা ট্যাগ কেমন দেখায় তা দেখানো হয়েছে।</p>
+</header>
+
+<hr>
+
+<main>
+
+  <!-- ===================== STRUCTURE ===================== -->
+  <section id="structure">
+    <h2>১. ডকুমেন্ট স্ট্রাকচার ট্যাগ</h2>
+
+    <article>
+      <h3>header / nav / main / section / article / aside / footer / div</h3>
+      <p>পুরো পেজটাই এই ট্যাগগুলো দিয়ে সাজানো।</p>
+      <div>
+        আমি একটা সাধারণ &lt;div&gt; — কোনো নিজস্ব স্টাইল/অর্থ নেই, শুধু গ্রুপিং এর জন্য ব্যবহার হয়।
+      </div>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== TEXT ===================== -->
+  <section id="text">
+    <h2>২. হেডিং ও প্যারাগ্রাফ</h2>
+
+    <article>
+      <h3>h1 - h6</h3>
+      <h1>H1 হেডিং</h1>
+      <h2>H2 হেডিং</h2>
+      <h3>H3 হেডিং</h3>
+      <h4>H4 হেডিং</h4>
+      <h5>H5 হেডিং</h5>
+      <h6>H6 হেডিং</h6>
+    </article>
+
+    <article>
+      <h3>p / br / hr</h3>
+      <p>এটা একটা প্যারাগ্রাফ।<br>এই লাইনটা &lt;br&gt; দিয়ে নতুন লাইনে নেওয়া হয়েছে।</p>
+      <hr>
+      <p>উপরে একটা &lt;hr&gt; দেখা যাচ্ছে — সেকশন আলাদা করতে ব্যবহার হয়।</p>
+    </article>
+
+    <article>
+      <h3>blockquote / q / cite</h3>
+      <blockquote>
+        এটা একটা বড় উদ্ধৃতি (blockquote) — সাধারণত অন্য কোনো সোর্স থেকে নেওয়া লম্বা টেক্সট দেখাতে ব্যবহার হয়।
+        <footer>— <cite>একটা কাল্পনিক বই</cite></footer>
+      </blockquote>
+      <p>ছোট ইনলাইন উদ্ধৃতির জন্য: সে বলেছিল <q>এখনই শুরু করো</q> — এটা &lt;q&gt; ট্যাগ।</p>
+    </article>
+
+    <article>
+      <h3>address</h3>
+      <address>
+        লেখক: ফাহাদ<br>
+        ইমেইল: <a href="mailto:info@example.com">info@example.com</a>
+      </address>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== INLINE ===================== -->
+  <section id="inline">
+    <h2>৩. ইনলাইন টেক্সট সেমান্টিক্স</h2>
+
+    <article>
+      <h3>strong / em / b / i / u / s / small / mark</h3>
+      <p>
+        <strong>strong</strong> = গুরুত্বপূর্ণ টেক্সট<br>
+        <em>em</em> = জোর দেওয়া টেক্সট<br>
+        <b>b</b> = শুধু বোল্ড স্টাইল<br>
+        <i>i</i> = শুধু ইটালিক স্টাইল<br>
+        <u>u</u> = আন্ডারলাইন<br>
+        <s>s</s> = স্ট্রাইকথ্রু<br>
+        <small>small</small> = ছোট টেক্সট<br>
+        <mark>mark</mark> = হাইলাইট করা টেক্সট
+      </p>
+    </article>
+
+    <article>
+      <h3>sub / sup</h3>
+      <p>পানির সংকেত: H<sub>2</sub>O, আইনস্টাইনের সূত্র: E = mc<sup>2</sup></p>
+    </article>
+
+    <article>
+      <h3>abbr / time / span</h3>
+      <p>
+        <abbr title="HyperText Markup Language">HTML</abbr> শেখা শুরু হয়েছিল
+        <time datetime="2026-07-03">৩ জুলাই, ২০২৬</time> তারিখে।
+        এই বাক্যের <span>এই অংশটা</span> &lt;span&gt; দিয়ে আলাদা করা।
+      </p>
+    </article>
+
+    <article>
+      <h3>code / pre / kbd / samp / var</h3>
+      <p>ইনলাইন কোড: <code>console.log("Hi")</code>, কীবোর্ড কী: <kbd>Ctrl</kbd> + <kbd>C</kbd>, প্রোগ্রামের আউটপুট: <samp>Hello World</samp>, ভ্যারিয়েবল: <var>x</var></p>
+      <pre>function greet(name) {
+  return "Hello, " + name;
+}</pre>
+    </article>
+
+    <article>
+      <h3>ins / del</h3>
+      <p>দাম ছিল <del>৫০০ টাকা</del> <ins>৩৫০ টাকা</ins> (নতুন অফার)।</p>
+    </article>
+
+    <article>
+      <h3>a (link)</h3>
+      <a href="#structure">উপরে ফিরে যাও</a><br>
+      <a href="https://developer.mozilla.org" target="_blank">MDN এ যাও (নতুন ট্যাবে)</a>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== LISTS ===================== -->
+  <section id="lists">
+    <h2>৪. লিস্ট ট্যাগ</h2>
+
+    <article>
+      <h3>ul / li</h3>
+      <ul>
+        <li>Unordered লিস্ট আইটেম ১</li>
+        <li>আইটেম ২</li>
+        <li>আইটেম ৩</li>
+      </ul>
+    </article>
+
+    <article>
+      <h3>ol / li</h3>
+      <ol type="1">
+        <li>প্রথম ধাপ</li>
+        <li>দ্বিতীয় ধাপ</li>
+        <li>তৃতীয় ধাপ</li>
+      </ol>
+    </article>
+
+    <article>
+      <h3>dl / dt / dd</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>ওয়েব পেজের কাঠামো তৈরি করে</dd>
+        <dt>CSS</dt>
+        <dd>পেজের স্টাইল ও ডিজাইন করে</dd>
+      </dl>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== TABLES ===================== -->
+  <section id="tables">
+    <h2>৫. টেবিল ট্যাগ</h2>
+
+    <article>
+      <h3>table / caption / thead / tbody / tfoot / tr / th / td / colgroup / col</h3>
+      <table border="1">
+        <caption>সাপ্তাহিক ক্লাস রুটিন</caption>
+        <colgroup>
+          <col>
+          <col span="2">
+        </colgroup>
+        <thead>
+          <tr><th>দিন</th><th>বিষয়</th><th>সময়</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>রবিবার</td><td>HTML</td><td>১০টা</td></tr>
+          <tr><td>সোমবার</td><td>CSS</td><td>১১টা</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">মোট ক্লাস</td><td>২</td></tr>
+        </tfoot>
+      </table>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== FORMS ===================== -->
+  <section id="forms">
+    <h2>৬. ফর্ম ট্যাগ</h2>
+
+    <article>
+      <h3>form / fieldset / legend / label / input / select / textarea / button / datalist / output / progress / meter</h3>
+      <form>
+        <fieldset>
+          <legend>ব্যক্তিগত তথ্য</legend>
+
+          <label for="name">নাম (text):</label><br>
+          <input type="text" id="name" placeholder="তোমার নাম"><br>
+
+          <label for="email">ইমেইল:</label><br>
+          <input type="email" id="email" placeholder="you@example.com"><br>
+
+          <label for="pass">পাসওয়ার্ড:</label><br>
+          <input type="password" id="pass"><br>
+
+          <label for="age">বয়স (number):</label><br>
+          <input type="number" id="age" min="1" max="100"><br>
+
+          <label for="dob">জন্ম তারিখ:</label><br>
+          <input type="date" id="dob"><br>
+
+          <label for="color">প্রিয় রং:</label><br>
+          <input type="color" id="color"><br>
+
+          <label for="range">সন্তুষ্টি (range):</label><br>
+          <input type="range" id="range" min="0" max="10"><br>
+
+          <label for="city">শহর (datalist সহ):</label><br>
+          <input type="text" id="city" list="cityList">
+          <datalist id="cityList">
+            <option value="ঢাকা">
+            <option value="চট্টগ্রাম">
+            <option value="সিলেট">
+          </datalist>
+        </fieldset>
+
+        <fieldset>
+          <legend>পছন্দ</legend>
+
+          <label>জেন্ডার (radio):</label><br>
+          <input type="radio" name="gender" id="male"><label for="male">পুরুষ</label>
+          <input type="radio" name="gender" id="female"><label for="female">নারী</label><br>
+
+          <label>শর্তাবলী (checkbox):</label><br>
+          <input type="checkbox" id="terms"><label for="terms">আমি নিয়মাবলীতে সম্মত</label><br>
+
+          <label for="country">দেশ (select):</label><br>
+          <select id="country">
+            <optgroup label="দক্ষিণ এশিয়া">
+              <option>বাংলাদেশ</option>
+              <option>ভারত</option>
+            </optgroup>
+            <optgroup label="ইউরোপ">
+              <option>জার্মানি</option>
+            </optgroup>
+          </select><br>
+
+          <label for="msg">মন্তব্য (textarea):</label><br>
+          <textarea id="msg" rows="3" placeholder="তোমার মতামত লেখো..."></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>অন্যান্য উপাদান</legend>
+
+          <label>প্রোগ্রেস বার:</label><br>
+          <progress value="70" max="100">70%</progress><br>
+
+          <label>মিটার (গেজ):</label><br>
+          <meter value="6" min="0" max="10">6/10</meter><br>
+
+          <label for="a">যোগফল আউটপুট:</label><br>
+          <input type="number" id="a" value="5"> +
+          <input type="number" id="b" value="3"> =
+          <output for="a b">8</output>
+
+          <br><br>
+          <button type="button">সাধারণ বাটন</button>
+          <input type="submit" value="সাবমিট ইনপুট">
+          <input type="reset" value="রিসেট">
+        </fieldset>
+      </form>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== MEDIA ===================== -->
+  <section id="media">
+    <h2>৭. মিডিয়া ট্যাগ</h2>
+
+    <article>
+      <h3>figure / figcaption / img</h3>
+      <figure>
+        <img src="https://picsum.photos/300/160" alt="র‍্যান্ডম ছবি" width="300" height="160">
+        <figcaption>figure এর ভেতরে img + figcaption দিয়ে ক্যাপশনসহ ছবি</figcaption>
+      </figure>
+    </article>
+
+    <article>
+      <h3>audio / video / source / track</h3>
+      <p><strong>audio ট্যাগ:</strong></p>
+      <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        তোমার ব্রাউজার audio ট্যাগ সাপোর্ট করে না।
+      </audio>
+
+      <p><strong>video ট্যাগ:</strong></p>
+      <video controls width="300">
+        <source src="video.mp4" type="video/mp4">
+        <track kind="subtitles" src="subs.vtt" srclang="bn" label="Bangla">
+        তোমার ব্রাউজার video ট্যাগ সাপোর্ট করে না।
+      </video>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== INTERACTIVE ===================== -->
+  <section id="interactive">
+    <h2>৮. ইন্টারঅ্যাক্টিভ ট্যাগ</h2>
+
+    <article>
+      <h3>details / summary</h3>
+      <details>
+        <summary>ক্লিক করে দেখো এই অংশটা কী লুকিয়ে আছে</summary>
+        <p>এটা &lt;details&gt; ট্যাগের ভেতরের লুকানো কনটেন্ট — &lt;summary&gt; তে ক্লিক করলে এটা খোলে/বন্ধ হয়। কোনো JavaScript বা CSS ছাড়াই!</p>
+      </details>
+    </article>
+  </section>
+
+  <hr>
+
+  <!-- ===================== EMBEDDED ===================== -->
+  <section id="embed">
+    <h2>৯. এমবেডেড ও অন্যান্য ট্যাগ</h2>
+
+    <article>
+      <h3>iframe</h3>
+      <iframe src="https://en.wikipedia.org/wiki/HTML" width="100%" height="200" title="Wikipedia HTML page"></iframe>
+    </article>
+
+    <article>
+      <h3>svg (ভেক্টর গ্রাফিক্স)</h3>
+      <svg width="120" height="120" viewBox="0 0 120 120">
+        <circle cx="60" cy="60" r="50"></circle>
+        <text x="60" y="65" text-anchor="middle">SVG</text>
+      </svg>
+    </article>
+
+    <article>
+      <h3>canvas</h3>
+      <canvas id="myCanvas" width="200" height="100"></canvas>
+      <p><small>canvas এর ভেতরে আঁকতে JavaScript লাগে।</small></p>
+    </article>
+
+    <article>
+      <h3>picture</h3>
+      <picture>
+        <source media="(min-width:600px)" srcset="https://picsum.photos/300/150">
+        <img src="https://picsum.photos/200/100" alt="responsive ছবি">
+      </picture>
+      <p><small>picture ট্যাগ স্ক্রিনের সাইজ অনুযায়ী আলাদা ছবি দেখাতে পারে।</small></p>
+    </article>
+
+    <article>
+      <h3>noscript</h3>
+      <noscript>তোমার ব্রাউজারে JavaScript বন্ধ থাকলে এই লেখাটা দেখা যাবে।</noscript>
+      <p><small>(JavaScript চালু থাকলে উপরের লাইনটা দেখা যাবে না)</small></p>
+    </article>
+  </section>
+
+</main>
+
+<hr>
+
+<footer>
+  <p>এই পুরো পেজটা কোনো CSS ছাড়াই, শুধু HTML ট্যাগ দিয়ে তৈরি — ব্রাউজারের ডিফল্ট স্টাইলে।</p>
+  <p><a href="#structure">উপরে ফিরে যাও</a></p>
+</footer>
+
+<script>
+  var c = document.getElementById('myCanvas');
+  if (c && c.getContext) {
+    var ctx = c.getContext('2d');
+    ctx.strokeRect(20, 20, 60, 60);
+    ctx.beginPath();
+    ctx.arc(140, 50, 30, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+</script>
+
+</body>
+</html>
