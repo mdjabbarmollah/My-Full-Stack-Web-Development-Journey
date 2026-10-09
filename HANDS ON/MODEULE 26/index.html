@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tailwind css start</title>
+  <!-- tailwind connection  -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- custom vabe deyar jonno color ba px er jonno third bracket use korte hobe -->
+  <h1 class="bg-[url('./image/image.jpg')] bg-cover bg-center h-[280px] rounded-2xl border-4 border-amber-500 font-bold text-pink-400">
+    If you want to rich you have must to learn first adapt anything
+  </h1>
+  <h2 class=" sm:text-amber-400 md:text-orange-700  text-[25px] sm:text-[40px] md:text-[60px] bg-[url(https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA2bbBvK.img?w=534&h=300&m=6&x=295&y=47&s=417&d=78)] h-[300px] border-4 border-cyan-400 rounded-2xl ",>hello tailwind</h2>
+<p class="tc">traditional way te css oo tailwind er majhe difference</p>
+  <div class="h-16 bg-fuchsia-300 rounded-2xl my-3 mx-4 p-3 border-x-purple-600ple-300 border-4">
+    <p>Everyone fuck losser it's fact</p>
+  </div>
+  <p class="mt-[10px] mx-[20px]  bg-rose-300 rounded-4xl h-[300px] border-amber-500 border-4 p-6 md" >if you want border only over the top center you have to use mt-[here you can write anything which mejerment you want like 10px]</p>
+
+
+  <h2 class="font-bold text-fuchsia-600 text-4xl">Lay out using flex</h2>
+
+  <div class="my-8 flex flex-md:col sm:flex-row md:flex-md:col gap-20 ">
+  <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl">
+    card1
+  </div>
+  <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl">
+    card2
+  </div>
+  <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl ">
+    card3
+  </div>
+  </div>
+
+
+<h2 class="font-bold text-fuchsia-600 text-4xl">Using Grid</h2>
+
+
+  <div class="my-8 grid grid-cols-1 md:grid-cols-12 gap-4">
+    <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl col-span-1 md:col-span-4">
+      card-1
+    </div>
+    
+    <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl col-span-1 md:col-span-2">
+      card-2
+    </div>
+    <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl col-span-1 md:col-span-3 ">
+      card-3
+    </div>
+    <div class="h-64 w-full bg-red-900 text-yellow-600 p-7 flex justify-center items-center border-4 rounded-2xl col-span-1 md:col-span-3">
+      card-4
+    </div>
+  </div>
+</body>
+</html>
