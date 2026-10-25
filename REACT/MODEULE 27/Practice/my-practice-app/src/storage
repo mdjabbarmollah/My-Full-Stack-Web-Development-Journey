@@ -1,0 +1,72 @@
+className='bg-white border text-[#374151] rounded-[8px] w-[170px] h-[42px] border-[#E5E7EB]'
+````//স্বাভাবিক ১px border রাখাই ভালো, `border-[4px]` বাদ দিন।
+
+### ২. `h2`-তে এখনো অকার্যকর class রয়ে গেছে
+
+```jsx
+<h2 className='... md:col-span-9'>
+```
+
+আগেও বলেছিলাম — `h2` grid-এর direct child না (এটা `md:col-span-7` div-এর ভেতরে), তাই `md:col-span-9` কোনো effect করছে না। এটা বাদ দিন।
+
+### ৩. `justify-end` (outer container) আর `justify-center` (image div) — এই দুটো কাজ করছে না
+
+```jsx
+<div className="... justify-end mt-[96px] mb-[112px]">
+```
+এবং
+```jsx
+<div className='md:col-span-5 justify-center'>
+```
+
+`justify-*` class শুধু তখনই কাজ করে যখন সেই element **`flex` বা `grid` container** হয় এবং তার child-দের alignment নিয়ন্ত্রণ করে। কিন্তু:
+- বাইরের container-এ `justify-end` আছে ঠিকই, এটা `grid` container-ই বটে, কিন্তু grid-এর column-গুলো (৭+৫ = ১২, পুরো width ভরে গেছে) already ভরাট, তাই `justify-end`-এর কোনো visible effect নেই — বাদ দিলেও কোনো পার্থক্য হবে না।
+- Image-এর বাইরের `<div className='md:col-span-5 justify-center'>` — এই `div` নিজে `flex`/`grid` না, তাই এর ভেতরে `justify-center` লেখাটা সম্পূর্ণ **অকার্যকর**, কিছুই করছে না।
+
+এগুলো বাদ দিতে পারেন, কোনো পরিবর্তন দেখবেন না — শুধু কোড পরিষ্কার হবে।
+
+---
+
+## দ্বিতীয় প্রশ্ন — Banner-এর জন্য আলাদা component কীভাবে করবেন
+
+Banner পুরোটা একবারই ব্যবহার হচ্ছে (আগে বলেছিলাম), তাই পুরো Banner আলাদা করার দরকার নেই — এটা এমনিতেই একটা আলাদা component (`Banner.tsx`)। কিন্তু আপনি যদি বোঝাতে চান Banner-এর **ভেতরের কোনো repeating অংশ** (যেমন দুইটা বাটন) আলাদা করতে চান, সেটা এভাবে করবেন:
+
+### `Button.tsx` বানান (নতুন ফাইল)
+
+```tsx
+type ButtonProps = {
+  children: string;
+  variant: 'gradient' | 'outline';
+}
+
+const Button = ({ children, variant }: ButtonProps) => {
+  const base = 'w-[170px] h-[42px] rounded-[8px] text-[14px] font-medium';
+  const style = variant === 'gradient'
+    ? 'bg-gradient-to-r from-[#F97316] to-[#EC4899] text-white'
+    : 'bg-white border border-[#E5E7EB] text-[#374151]';
+
+  return <button className={`${base} ${style}`}>{children}</button>
+}
+
+export default Button;
+```
+
+### `Banner.tsx`-এ ব্যবহার করুন
+
+```tsx
+import Button from './Button'
+
+// ...
+<div className='flex gap-[16px]'>
+  <Button variant='gradient'>Explore Technologies</Button>
+  <Button variant='outline'>Learn More</Button>
+</div>
+```
+
+## এখানে কী হচ্ছে বুঝুন
+
+- `variant` একটা **prop** — যেটা দিয়ে বলে দিচ্ছেন কোন style চাই ('gradient' নাকি 'outline')
+- `children` — এটা React-এর একটা বিশেষ prop, `<Button>এই যে টেক্সট</Button>` লিখলে ট্যাগের **ভেতরের content** নিজে থেকেই `children` prop হিসেবে চলে আসে (আলাদা করে `children={...}` লিখতে হয় না)
+- Component-এর ভেতরে `variant`-এর মান চেক করে ভিন্ন Tailwind class জোড়া দেওয়া হচ্ছে — এটা ঠিক আগের `todo.completed ? ... : ...` (conditional) pattern-এর মতোই, শুধু এখানে দুইটা string-এর মধ্যে বেছে নেওয়া হচ্ছে
+
+এই pattern পরে আপনার Navbar-এর Sign In/Sign Up বাটনেও reuse করতে পারবেন (তবে সেখানে size/shape একটু ভিন্ন, তাই variant আরেকটু বাড়াতে হতে পারে)। আপনার assignment-এ এটা করা **বাধ্যতামূলক না**, কিন্তু করলে কোড repeat কম হবে ও practice হিসেবে ভালো।

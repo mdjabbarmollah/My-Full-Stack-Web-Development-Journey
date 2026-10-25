@@ -1,0 +1,35 @@
+const TechCard = ({ tech }: { tech: any }) => {
+  return (
+    <div className="border border-[#E5E7EB] rounded-[16px] p-[24px] bg-white hover:shadow-md transition-shadow">
+      {/* আইকন এবং ব্যাজ */}
+      <div className="flex justify-between items-start mb-[16px]">
+        <img src={tech.icon} alt={tech.name} className="w-[48px] h-[48px]" />
+        <span className="bg-pink-50 text-pink-500 text-[12px] font-bold px-[12px] py-[4px] rounded-full">
+          {tech.badge}
+        </span>
+      </div>
+
+      {/* নাম এবং ডেসক্রিপশন */}
+      <h3 className="font-bold text-[20px] mb-[8px] text-[#1E293B]">{tech.name}</h3>
+      <p className="text-[#475569] text-[14px] leading-relaxed mb-[20px] line-clamp-3">
+        {tech.description}
+      </p>
+
+      {/* ক্যাটাগরি, ডিফিকাল্টি এবং রেটিং */}
+      <div className="flex justify-between items-center text-[13px] font-medium text-[#64748B] mb-[20px]">
+        <span>{tech.category}</span>
+        <span className="text-[#10B981] font-semibold">{tech.difficulty}</span>
+        <span className="flex items-center gap-[4px] text-[#F59E0B] font-bold">
+          ⭐ {tech.rating}
+        </span>
+      </div>
+
+      {/* বাটন */}
+      <button className="w-full bg-[#0F172A] text-white py-[10px] rounded-[8px] font-semibold text-[14px] hover:bg-gray-800 transition-colors">
+        Add to Stack
+      </button>
+    </div>
+  );
+};
+
+export default TechCard;

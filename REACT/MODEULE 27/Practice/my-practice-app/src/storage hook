@@ -1,0 +1,16 @@
+import { useState, useEffect } from 'react';
+
+const useTechnologies = () => {
+  const [technologies, setTechnologies] = useState([]);
+
+  useEffect(() => {
+    fetch('/technologies.json')
+      .then(res => res.json())
+      .then(data => setTechnologies(data));
+  }, []);
+
+  // হুক থেকে ডেটা রিটার্ন করছি যেন অন্য ফাইলে ব্যবহার করা যায়
+  return { technologies };
+};
+
+export default useTechnologies;
