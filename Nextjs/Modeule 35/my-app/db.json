@@ -1,0 +1,132 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Bluetooth heaaddfs",
+      "price": 2499,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/headphones/400/300",
+      "description": "Noise-cancelling over-ear headphones with 30 hours battery life.",
+      "stock": 25,
+      "rating": 4.5
+    },
+    {
+      "id": 2,
+      "name": "Smart Watch Series 5",
+      "price": 4999,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/smartwatch/400/300",
+      "description": "Fitness tracking smartwatch with heart rate monitor and GPS.",
+      "stock": 15,
+      "rating": 4.2
+    },
+    {
+      "id": 3,
+      "name": "Leather Backpack",
+      "price": 1899,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/backpack/400/300",
+      "description": "Genuine leather backpack with laptop compartment, fits up to 15 inch.",
+      "stock": 40,
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "name": "Stainless Steel Water Bottle",
+      "price": 599,
+      "category": "Home & Living",
+      "image": "https://picsum.photos/seed/bottle/400/300",
+      "description": "Insulated water bottle that keeps drinks cold for 24 hours.",
+      "stock": 100,
+      "rating": 4.4
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Gaming Keyboard",
+      "price": 3499,
+      "category": "Electronics",
+      "image": "https://picsum.photos/seed/keyboard/400/300",
+      "description": "RGB backlit mechanical keyboard with blue switches.",
+      "stock": 30,
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "name": "Running Shoes",
+      "price": 2199,
+      "category": "Fashion",
+      "image": "https://picsum.photos/seed/shoes/400/300",
+      "description": "Lightweight breathable running shoes with cushioned sole.",
+      "stock": 60,
+      "rating": 4.3
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The fAlchemist",
+      "author": "Paulo Coelho",
+      "price": 350,
+      "category": "Fiction",
+      "image": "https://picsum.photos/seed/alchemist/400/300",
+      "description": "A shepherd boy's journey to find his personal legend and discover the meaning of life.",
+      "stock": 40,
+      "rating": 4.7
+    },
+    {
+      "id": 2,
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "price": 550,
+      "category": "Self-Help",
+      "image": "https://picsum.photos/seed/atomichabits/400/300",
+      "description": "A practical guide to building good habits and breaking bad ones through small changes.",
+      "stock": 60,
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "price": 300,
+      "category": "Dystopian",
+      "image": "https://picsum.photos/seed/1984book/400/300",
+      "description": "A chilling vision of a totalitarian future where Big Brother watches everyone.",
+      "stock": 25,
+      "rating": 4.9
+    },
+    {
+      "id": 4,
+      "title": "The Silent Patient",
+      "author": "Alex Michaelides",
+      "price": 420,
+      "category": "Thriller",
+      "image": "https://picsum.photos/seed/silentpatient/400/300",
+      "description": "A psychological thriller about a woman's shocking act of violence and the therapist obsessed with uncovering her motive.",
+      "stock": 15,
+      "rating": 4.5
+    },
+    {
+      "id": 5,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "price": 600,
+      "category": "Non-Fiction",
+      "image": "https://picsum.photos/seed/sapiensbook/400/300",
+      "description": "A brief history of humankind, exploring how Homo sapiens came to dominate the world.",
+      "stock": 35,
+      "rating": 4.6
+    },
+    {
+      "id": 6,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "price": 480,
+      "category": "Fantasy",
+      "image": "https://picsum.photos/seed/harrypotter1/400/300",
+      "description": "A young boy discovers he is a wizard and begins his magical journey at Hogwarts.",
+      "stock": 50,
+      "rating": 4.9
+    }
+  ]
+}
