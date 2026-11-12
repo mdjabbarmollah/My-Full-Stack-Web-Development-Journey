@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "daisyui": "^5.7.46"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "react-hot-toast": "^2.6.1"
+  }
+}
